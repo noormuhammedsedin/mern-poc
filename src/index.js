@@ -5,7 +5,10 @@ const allBook=require("./api/allBook.api");
 const uploadBook=require("./api/UploadBook.api");
 const bookOperation=require("./api/book.api");
 const orderPayment=require("./api/payment.api");
-const port = 5000;
+const dotenv = require('dotenv')
+require('dotenv').config();
+
+const port = process.env.PORT||5000;
 const app=express();
 app.use(express.json());
 app.use(cors());

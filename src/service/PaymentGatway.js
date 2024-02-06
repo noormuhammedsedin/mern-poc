@@ -71,7 +71,6 @@ exports.brainTreePayment = async (cart, nonce) => {
                         products: cart,
                         payment: result,
                     }).save();
-                    console.log("*************order",order)
                    return "order created successfully!!"
                 } catch (orderError) {
                     console.error("Error saving order:", orderError);
