@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
-
+const dotenv = require('dotenv')
+require('dotenv').config();
+const mogoUrl=process.env.MONGO_URL || "mongodb://127.0.0.1:27017/BookInventory"
 const connect = async () => {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/BookInventory", {
+    await mongoose.connect(mogoUrl, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
